@@ -12,9 +12,13 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "jest": "^22.0.4"
+    "jest": "^22.0.4",
+    "supertest": "^3.0.0"
   },
   "jest": {
     "collectCoverage": true
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }
