@@ -1,4 +1,4 @@
-const {add, addObj, sqr} = require('./example')
+const {add, addObj, sqr , divide} = require('./example')
 
 it('should add 2 number', () => {
   expect(add(2, 4)).toEqual(6)
@@ -15,4 +15,8 @@ it('should handle callback', done => {
     expect(res).toBe(9)
     done()
   })
+})
+
+it('should handle promises',() => {
+  return expect(divide(10, 5)).resolves.toBe(2)
 })
