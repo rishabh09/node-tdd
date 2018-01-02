@@ -9,4 +9,27 @@ describe('Server', () => {
       done()
     })
   })
+
+  it('should return `use the force`', done => {
+    request(app).post('/foo').send({ name: 'master yoda'}).then(res => {
+      expect(res.statusCode).toBe(200)
+      expect(res.text).toBe('use the force')
+      done()
+    })
+  })
+
+  it('should return `welcome to darkside`', done => {
+    request(app).post('/foo').send({ name: 'luke skywalker'}).then(res => {
+      expect(res.statusCode).toBe(200)
+      expect(res.text).toBe('welcome to darkside')
+      done()
+    })
+  })
+
+  it('should return 404 status code', done => {
+    request(app).get('/bar').then(res => {
+      expect(res.statusCode).toBe(404)
+      done()
+    })
+  })
 })
