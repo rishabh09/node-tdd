@@ -1,8 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+const apis = require('./apis')
 
 app.use(bodyParser.json())
+
+app.use('/api', apis)
 
 app.get('/', (req, res) => {
   res.status(200).send("Hello World")

@@ -32,4 +32,13 @@ describe('Server', () => {
       done()
     })
   })
+
+  it('should return json from api', done => {
+    request(app).get('/api/v1').then(res => {
+      const data = res.body
+      expect(data).toEqual({'foo':'bar'})
+      expect(res.statusCode).toBe(200)
+      done()
+    })
+  })
 })
